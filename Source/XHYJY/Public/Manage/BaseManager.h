@@ -3,36 +3,38 @@
 #pragma once
 
 #include "CoreMinimal.h"
-#include "GameFramework/Pawn.h"
-#include "VDPawn.generated.h"
+#include "GM/VDPawn.h"
+#include "Data/DataType.h"
+#include "GameFramework/Actor.h"
+#include "Widget/BaseWidget.h"
+#include "BaseManager.generated.h"
 
 UCLASS()
-class XHYJY_API AVDPawn : public APawn
+class XHYJY_API ABaseManager : public AActor
 {
 	GENERATED_BODY()
-
-public:
-	// Sets default values for this pawn's properties
-	AVDPawn();
+	
+public:	
+	// Sets default values for this actor's properties
+	ABaseManager();
 
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
-
-	void CreateManagers();
-	void InitManagers();
-
+	
+	
 public:	
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
 
-	// Called to bind functionality to input
-	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
+public:	
+	virtual void InitManager();
 
 public:
 	UPROPERTY()
-	class AWidgetManager* WidgetManager;
-
+	AVDPawn* VDPawn;
 	UPROPERTY()
 	class AResourceManager* ResourceManager;
+	UPROPERTY()
+	class AWidgetManager* WidgetManager;
 };
