@@ -3,6 +3,7 @@
 
 #include "Data/DataType.h"
 
+
 // Sets default values
 ADataType::ADataType()
 {

@@ -7,11 +7,14 @@
 #include "DataType.generated.h"
 
 
-enum class EWidgetType : uint8
+enum class EWidgetType:uint8
 {
 	EWT_None,
 	EWT_HomePage,
+	
 };
+
+
 
 
 UCLASS()

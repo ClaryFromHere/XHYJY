@@ -2,8 +2,8 @@
 
 
 #include "GM/VDPawn.h"
-#include "Manage/WidgetManager.h"
-#include "Manage/ResourceManager.h"
+#include "Manager/ResourceManager.h"
+#include "Manager/UIManager.h"
 
 // Sets default values
 AVDPawn::AVDPawn()
@@ -23,25 +23,27 @@ void AVDPawn::BeginPlay()
 
 void AVDPawn::CreateManagers()
 {
-	ResourceManager = NewObject<AResourceManager>(this);
-	WidgetManager = NewObject<AWidgetManager>(this);
+	ResourceManager=NewObject<AResourceManager>(this);
+	UIManager=NewObject<AUIManager>(this);
 }
 
 void AVDPawn::InitManagers()
 {
 	ResourceManager->InitManager();
-	WidgetManager->InitManager();
+	UIManager->InitManager();
 }
 
 // Called every frame
 void AVDPawn::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
+
 }
 
 // Called to bind functionality to input
 void AVDPawn::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
 {
 	Super::SetupPlayerInputComponent(PlayerInputComponent);
+
 }
 

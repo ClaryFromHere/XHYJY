@@ -31,8 +31,9 @@ public:
 
 public:
 	UPROPERTY()
-	class AWidgetManager* WidgetManager;
+	class AResourceManager* ResourceManager;
 
 	UPROPERTY()
-	class AResourceManager* ResourceManager;
+	class AUIManager* UIManager;
+	
 };
